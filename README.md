@@ -15,7 +15,7 @@ This part of the [The Odin Project](https://www.theodinproject.com/) foundations
 ## Development
 
 - [x] Console based rock, paper, scissor game. Use a prompt to get the player play;
-- [] Create a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
+- [ ] Create a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
 
 ## Bugs, Advices and Lessons Learned
 
