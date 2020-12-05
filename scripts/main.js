@@ -11,6 +11,26 @@ function getComputerPlay() {
     return possibleOutcomes[playResult]
 }
 
+function getUserPlay() {
+    let validPlay = false;
+    let userPlay;
+
+    while(validPlay === false) {
+        userPlay = prompt("Select your play - Rock, Paper or Scissors:");
+        userPlay = userPlay.toLowerCase();
+        userPlay = userPlay.replace(/\s/g, "");
+
+        if (userPlay === "rock" || userPlay === "paper" || userPlay === "scissors") {
+            validPlay = true;
+        }
+        else {
+            validPlay = false;
+            alert("Your play is invalid.\nValic plays: Rock, Paper or Scissors.");
+        }
+    }
+    return userPlay;
+}
+
 function playRound(userPlay, computerPlay) {
     // Given a user play and a computer play of rock, paper, scissors round.
     // Rock beats scissors.
