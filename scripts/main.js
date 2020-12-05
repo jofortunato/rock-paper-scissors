@@ -11,12 +11,27 @@ function computerPlay() {
     return possibleOutcomes[playResult]
 }
 
-function playRound() {
+function playRound(userPlay, computerPlay) {
     // Given a user play and a computer play of rock, paper, scissors round.
-    // Rock beats scissor.
+    // Rock beats scissors.
     // Paper beats rock.
-    // Scissor beats paper.
+    // Scissors beats paper.
     
+    if (userPlay === computerPlay) {
+        return "draw"
+    }
+    else if ((userPlay === "rock") && (computerPlay === "scissors")) {
+        return "user"
+    }
+    else if ((userPlay === "paper") && (computerPlay === "rock")) {
+        return "user"
+    }
+    else if ((userPlay === "scissors") && (computerPlay === "paper")) {
+        return "user"
+    }
+    else {
+        return "computer"
+    }
 }
 
 function game() {
