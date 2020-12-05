@@ -1,4 +1,4 @@
-function computerPlay() {
+function getComputerPlay() {
     // Computer play function. 
     // Randomly calculates an integer number between 0 and 2.
     // Uses the random number as the index of an array of strings.
@@ -41,4 +41,33 @@ function game() {
     // and calls the playRound() function to determine the winner.
     // After N rounds determines the winner. 
 
+    let numberRounds;
+    let userScore = 0;
+    let computerScore = 0;
+    let roundResult;
+    let userPlay;
+    let computerPlay;
+
+    numberRounds = parseInt(prompt("Select the number of Rock Paper Scissors rounds you wish to play:",5));
+    numberRounds = isNaN(numberRounds) ? 5 : numberRounds;
+
+    for(let i = 0; i < numberRounds; i++) {
+        // getUserPlay() Function to prompt user and standardize the response.
+        // For development purpose, let:
+        userPlay = "rock";
+        computerPlay = getComputerPlay();
+
+        roundResult = playRound(userPlay, computerPlay);
+
+        if (roundResult === "user") {
+            userScore++;
+        }
+        else if (roundResult === "computer") {
+            computerScore++;
+        }
+
+        alert(`Round ${i+1} result:\n
+        User ${userPlay} vs. ${computerPlay} Computer \n
+        User ${userScore} : ${computerScore} Computer`)
+    }
 }
