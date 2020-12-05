@@ -16,11 +16,11 @@ function getUserPlay() {
     let userPlay;
 
     while(validPlay === false) {
-        userPlay = prompt("Select your play - Rock, Paper or Scissors:");
-        userPlay = userPlay.toLowerCase();
-        userPlay = userPlay.replace(/\s/g, "");
+        play = prompt("Select your play - Rock, Paper or Scissors:");
+        play = play.toLowerCase();
+        play = play.replace(/\s/g, "");
 
-        if (userPlay === "rock" || userPlay === "paper" || userPlay === "scissors") {
+        if (play === "rock" || play === "paper" || play === "scissors") {
             validPlay = true;
         }
         else {
@@ -28,7 +28,7 @@ function getUserPlay() {
             alert("Your play is invalid.\nValic plays: Rock, Paper or Scissors.");
         }
     }
-    return userPlay;
+    return play;
 }
 
 function playRound(userPlay, computerPlay) {
@@ -67,6 +67,7 @@ function game() {
     let roundResult;
     let userPlay;
     let computerPlay;
+    let result;
 
     numberRounds = parseInt(prompt("Select the number of Rock Paper Scissors rounds you wish to play:",5));
     numberRounds = isNaN(numberRounds) ? 5 : numberRounds;
@@ -74,7 +75,7 @@ function game() {
     for(let i = 0; i < numberRounds; i++) {
         // getUserPlay() Function to prompt user and standardize the response.
         // For development purpose, let:
-        userPlay = "rock";
+        userPlay = getUserPlay();
         computerPlay = getComputerPlay();
 
         roundResult = playRound(userPlay, computerPlay);
@@ -90,4 +91,19 @@ function game() {
         User ${userPlay} vs. ${computerPlay} Computer \n
         User ${userScore} : ${computerScore} Computer`)
     }
+
+    if (userScore > computerScore) {
+        result = "user";
+        alert("You won!");
+    }
+    else if (computerScore > userScore) {
+        result = "computer";
+        alert("Oh No! The computer won this time.");
+    }
+
+    else {
+        result = "draw";
+        alert("It's a draw!");
+    }
+
 }
