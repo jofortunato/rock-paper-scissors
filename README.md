@@ -6,9 +6,15 @@ Rock, paper, scissor game against the computer created in Javascript.
 
 This part of the [The Odin Project](https://www.theodinproject.com/) foundations course. After learning the basics of Javascript, I'll implement a simple game to put into practice what I've learnt and improve my skills/knowledge further.
 
+## How to Play
+
+1. In your browser, open the console (for Google Chrome hit Ctrl+Shift+J);
+2. Type: game();
+3. Follow the instuctions presented in the browser and Play!
+
 ## Development
 
-- [] Console based rock, paper, scissor game. Use a prompt to get the player play;
+- [x] Console based rock, paper, scissor game. Use a prompt to get the player play;
 - [] Create a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
 
 ## Bugs, Advices and Lessons Learned
