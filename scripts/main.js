@@ -107,3 +107,28 @@ function game() {
     }
 
 }
+
+function playRoundUI(event) {
+    let userPlay = event.target.value;
+    let computerPlay = getComputerPlay();
+
+    roundResult = playRound(userPlay, computerPlay);
+
+    if (roundResult === "user") {
+        alert(`${userPlay} vs. ${computerPlay}\nUser won`);
+    }
+    else if (roundResult === "computer") {
+        alert(`${userPlay} vs. ${computerPlay}\nComputer won`);
+    }
+
+
+}
+
+const userBtnsDiv = document.querySelector('#user-options');
+
+
+userBtnsDiv.addEventListener('click', function (e) {
+    if (e.target && e.target.matches(".play-option")) {
+        playRoundUI(e);
+    }
+});
