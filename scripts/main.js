@@ -88,8 +88,8 @@ function game() {
         }
 
         alert(`Round ${i+1} result:\n
-        User ${userPlay} vs. ${computerPlay} Computer \n
-        User ${userScore} : ${computerScore} Computer`)
+                User ${userPlay} vs. ${computerPlay} Computer \n
+                User ${userScore} : ${computerScore} Computer`)
     }
 
     if (userScore > computerScore) {
