@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet"  href="./styles/styles.css" media="all"/>
     <link rel="stylesheet"  href="./styles/reset.css" media="all"/>
-    <script src="scripts/main.js"></script>
     <title>Rock, Paper, Scissor</title>
 </head>
 <body>
-    
+    <h1>Rock, Paper, Scissors</h1>
+    <div id="results">
+        <p id="game-result"></p>
+        <p id="round-winner"></p>
+    </div>
+    <div id="playground">
+        <div id="user-play">
+            <h2 class="player-header"></h2>
+            <div id="user-options">
+                <div id="user-rock" class="play-option rock"></div>
+                <div id="user-paper" class="play-option paper"></div>
+                <div id="user-scissors" class="play-option scissors"></div>
+            </div>
+        </div>
+        <div id="computer-play">
+            <h2 class="player-header"></h2>
+            <div id="computer-options">
+                <div class="play-option"></div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <p id="restart">Restart</p>
+        <p id="help">Help</p>
+    </footer>
 </body>
+<script src="scripts/main.js"></script>
 </html>
