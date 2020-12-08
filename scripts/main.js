@@ -109,26 +109,41 @@ function game() {
 }
 
 function playRoundUI(event) {
-    let userPlay = event.target.value;
-    let computerPlay = getComputerPlay();
 
-    roundResult = playRound(userPlay, computerPlay);
+    if (event.target && event.target.matches(".play-option")) {
 
-    if (roundResult === "user") {
-        alert(`${userPlay} vs. ${computerPlay}\nUser won`);
+        let userPlay = event.target.value;
+        let computerPlay = getComputerPlay();
+
+        roundResult = playRound(userPlay, computerPlay);
+
+        printRoundResult(roundResult, userPlay, computerPlay);
     }
-    else if (roundResult === "computer") {
-        alert(`${userPlay} vs. ${computerPlay}\nComputer won`);
-    }
-
 
 }
 
-const userBtnsDiv = document.querySelector('#user-options');
+function printRoundResult(winner, userPlay, computerPlay) {
+    let roundWinnerBoard = document.querySelector("#round-winner");
+    let roundDescription = document.querySelector("#round-description");
 
-
-userBtnsDiv.addEventListener('click', function (e) {
-    if (e.target && e.target.matches(".play-option")) {
-        playRoundUI(e);
+    if (winner === "user") {
+        roundWinnerBoard.textContent = "User Won!";
+        roundDescription.textContent = `${capitalize(userPlay)} beats ${capitalize(computerPlay)}`;
     }
-});
+    else if (winner === "computer") {
+        roundWinnerBoard.textContent = "Computer Won!";
+        roundDescription.textContent = `${capitalize(computerPlay)} beats ${capitalize(userPlay)}`;
+    }
+    else {
+        roundWinnerBoard.textContent = "Draw"
+        roundDescription.textContent = "";
+    }
+}
+
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+const userBtnsDiv = document.querySelector("#user-options");
+userBtnsDiv.addEventListener("click", playRoundUI);
