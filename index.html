@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet"  href="./styles/styles.css" media="all"/>
     <link rel="stylesheet"  href="./styles/reset.css" media="all"/>
+    <link rel="stylesheet"  href="./styles/styles.css" media="all"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Rock, Paper, Scissor</title>
 </head>
 <body>
-    <h1>Rock, Paper, Scissors</h1>
+    <h1 id="game-title">ROCK, PAPER, SCISSORS</h1>
     <div id="results">
-        <p id="game-result"></p>
-        <p id="round-winner"></p>
-        <p id="round-description"></p>
+        <p class="result-text" id="game-result">TEST 1</p>
+        <p class="result-text" id="round-winner">TEST 2</p>
+        <p class="result-text" id="round-description">TEST 3</p>
     </div>
     <div id="playground">
         <div id="user-play">
-            <h2 class="player-header"></h2>
+            <h2 class="player-header">User</h2>
             <div id="user-options">
-                <button id="user-rock" class="play-option rock" value="rock">ROCK</button>
-                <button id="user-paper" class="play-option paper" value="paper">PAPER</button>
-                <button id="user-scissors" class="play-option scissors" value="scissors">SCISSORS</button>
+                <button id="user-rock" class="play-option rock" value="rock"></button>
+                <button id="user-paper" class="play-option paper" value="paper"></button>
+                <button id="user-scissors" class="play-option scissors" value="scissors"></button>
             </div>
         </div>
         <div id="computer-play">
-            <h2 class="player-header"></h2>
+            <h2 class="player-header">Computer</h2>
             <div id="computer-options">
                 <p class="play-option">?</p>
             </div>

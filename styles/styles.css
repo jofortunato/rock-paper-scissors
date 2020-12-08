@@ -1,0 +1,61 @@
+p,
+span,
+a,
+h1,
+h2,
+h3 {
+  font-family: "Arial", sans-serif;
+  text-decoration: none;
+}
+
+p,
+span,
+a {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 46px;
+}
+
+#game-title {
+  text-align: center;
+  padding: 50px 0 20px 0;
+}
+
+.result-text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#playground {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.player-header {
+  text-align: center;
+}
+
+.play-option {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.rock {
+  background-image: url(../rock100.png);
+}
+
+.paper {
+  background-image: url(../paper100.png);
+}
+
+.scissors {
+  background-image: url(../scissors100.png);
+}

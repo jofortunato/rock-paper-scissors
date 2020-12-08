@@ -136,7 +136,7 @@ function printRoundResult(winner, userPlay, computerPlay) {
     }
     else {
         roundWinnerBoard.textContent = "Draw"
-        roundDescription.textContent = "";
+        roundDescription.textContent = " ";
     }
 }
 
