@@ -118,8 +118,11 @@ function playRoundUI(event) {
         roundResult = playRound(userPlay, computerPlay);
 
         printRoundResult(roundResult, userPlay, computerPlay);
-    }
 
+        if (roundResult !== "draw") {
+            updateGameResult(roundResult);
+        }
+    }
 }
 
 function printRoundResult(winner, userPlay, computerPlay) {
@@ -137,6 +140,18 @@ function printRoundResult(winner, userPlay, computerPlay) {
     else {
         roundWinnerBoard.textContent = "Draw"
         roundDescription.textContent = " ";
+    }
+}
+
+function updateGameResult(winner) {
+
+    if (winner === "user") {
+        let userScoreElement = document.querySelector("#user-score");
+        userScoreElement.textContent = parseInt(userScoreElement.textContent) + 1;
+    }
+    else if (winner === "computer"){
+        let computerScoreElement = document.querySelector("#computer-score")
+        computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
     }
 }
 
