@@ -49,13 +49,13 @@ h1 {
 }
 
 .rock {
-  background-image: url(../rock100.png);
+  background-image: url(../images/rock100.png);
 }
 
 .paper {
-  background-image: url(../paper100.png);
+  background-image: url(../images/paper100.png);
 }
 
 .scissors {
-  background-image: url(../scissors100.png);
+  background-image: url(../images/scissors100.png);
 }
