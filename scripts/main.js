@@ -112,15 +112,30 @@ function playRoundUI(event) {
 
     if (event.target && event.target.matches(".play-option")) {
 
-        let userPlay = event.target.value;
-        let computerPlay = getComputerPlay();
+        let userScoreElement = document.querySelector("#user-score");
+        let userScore = parseInt(userScoreElement.textContent);
+        let computerScoreElement = document.querySelector("#computer-score");
+        let computerScore = parseInt(computerScoreElement.textContent);
+        let gameOver;
 
-        roundResult = playRound(userPlay, computerPlay);
+        if (userScore < 5 && computerScore < 5) {
 
-        printRoundResult(roundResult, userPlay, computerPlay);
+            let userPlay = event.target.value;
+            let computerPlay = getComputerPlay();
 
-        if (roundResult !== "draw") {
-            updateGameResult(roundResult);
+            roundResult = playRound(userPlay, computerPlay);
+
+            printRoundResult(roundResult, userPlay, computerPlay);
+
+            if (roundResult !== "draw") {
+                gameOver = updateGameResult(roundResult, userScoreElement, computerScoreElement);
+                console.log(gameOver);
+
+                if (gameOver.isGameOver === true) {
+                    printGameOver(gameOver.gameWinner);
+                }
+            }
+
         }
     }
 }
@@ -143,15 +158,28 @@ function printRoundResult(winner, userPlay, computerPlay) {
     }
 }
 
-function updateGameResult(winner) {
+function updateGameResult(roundWinner, userScoreElement, computerScoreElement) {
 
-    if (winner === "user") {
-        let userScoreElement = document.querySelector("#user-score");
+    if (roundWinner === "user") {
         userScoreElement.textContent = parseInt(userScoreElement.textContent) + 1;
+        return parseInt(userScoreElement.textContent) === 5 ?
+                {isGameOver: true, gameWinner: "user"} : {isGameOver: false, gameWinner: ""}
     }
-    else if (winner === "computer"){
-        let computerScoreElement = document.querySelector("#computer-score")
+    else if (roundWinner === "computer"){
         computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
+        return parseInt(computerScoreElement.textContent) === 5 ? 
+                {isGameOver: true, gameWinner: "computer"} : {isGameOver: false, gameWinner: ""}
+    }
+}
+
+function printGameOver(gameWinner) {
+    let gameOverElement = document.querySelector("#game-over");
+
+    if (gameWinner === "user") {
+        gameOverElement.textContent = "You Won! Well done!";
+    }
+    else {
+        gameOverElement.textContent = "Bad luck! The Computer Won!";
     }
 }
 
