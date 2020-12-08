@@ -18,21 +18,48 @@ h1 {
   font-size: 46px;
 }
 
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
 #game-title {
   text-align: center;
-  padding: 50px 0 20px 0;
+  padding: 5% 0 2% 0;
 }
 
 .result-text {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 2%;
 }
 
 #playground {
-  margin-top: 100px;
+  margin-top: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+#user-play {
+  width: 40%;
+}
+
+#user-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+  #user-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .player-header {
@@ -42,10 +69,12 @@ h1 {
 .play-option {
   width: 100px;
   height: 100px;
+  margin: 2%;
   background-color: white;
   border: none;
-  border-radius: 20px;
   font-weight: bold;
+  text-align: center;
+  font-size: 48px;
 }
 
 .rock {
@@ -58,4 +87,21 @@ h1 {
 
 .scissors {
   background-image: url(../images/scissors100.png);
+}
+
+.holding {
+  background-image: url(../images/question-mark100.png);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+#re-start:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
