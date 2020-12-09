@@ -37,6 +37,10 @@ h3,
   padding-bottom: 2%;
 }
 
+#game-over {
+  font-weight: bold;
+}
+
 #playground {
   margin-top: 5%;
   display: flex;
@@ -80,6 +84,10 @@ h3,
   transform: scale(1.1);
 }
 
+.user-option:focus {
+  outline: none;
+}
+
 #computer-options {
   display: block;
   margin-left: auto;
@@ -100,6 +108,10 @@ h3,
 
 .holding {
   background-image: url(../images/question-mark100.png);
+}
+
+#round-info {
+  margin-top: 5%;
 }
 
 footer {
@@ -142,6 +154,7 @@ footer {
   }
   footer {
     position: static;
+    margin-top: 2%;
   }
 }
 
