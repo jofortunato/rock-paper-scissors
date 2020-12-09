@@ -50,6 +50,7 @@ function playRoundUI(event) {
 
         let userPlay = event.target.value;
         let computerPlay = getComputerPlay();
+        showComputerPlay(computerPlay);
 
         roundResult = playRound(userPlay, computerPlay);
 
@@ -109,6 +110,23 @@ function printGameOver(gameWinner) {
     }
 }
 
+function showComputerPlay(play) {
+    let computerPlayElement = document.querySelector("#computer-options");
+    if (computerPlayElement.classList.contains("holding")) {
+        computerPlayElement.classList.replace("holding", play);
+    }
+    else if (computerPlayElement.classList.contains("rock") && play !== "rock") {
+        computerPlayElement.classList.replace("rock", play);
+    }
+    else if (computerPlayElement.classList.contains("paper") && play !== "paper") {
+        computerPlayElement.classList.replace("paper", play);
+    }
+    else if (computerPlayElement.classList.contains("scissors") && play !== "scissors") {
+        computerPlayElement.classList.replace("scissors", play);
+    }
+
+}
+
 function restart() {
     let userScoreElement = document.querySelector("#user-score");
     userScoreElement.textContent = "0";
@@ -124,6 +142,17 @@ function restart() {
 
     let roundDescription = document.querySelector("#round-description");
     roundDescription.textContent = "";
+
+    let computerPlayElement = document.querySelector("#computer-options");
+    if (computerPlayElement.classList.contains("rock")) {
+        computerPlayElement.classList.replace("rock", "holding");
+    }
+    else if (computerPlayElement.classList.contains("paper")) {
+        computerPlayElement.classList.replace("paper", "holding");
+    }
+    else if (computerPlayElement.classList.contains("scissors")) {
+        computerPlayElement.classList.replace("scissors", "holding");
+    }
 }
 
 const capitalize = (s) => {
