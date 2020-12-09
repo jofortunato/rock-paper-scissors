@@ -207,3 +207,6 @@ const capitalize = (s) => {
 
 const userBtnsDiv = document.querySelector("#user-options");
 userBtnsDiv.addEventListener("click", playRoundUI);
+
+const restartBtn = document.querySelector("#re-start");
+restartBtn.addEventListener("click", restart);
