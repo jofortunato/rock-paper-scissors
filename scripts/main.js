@@ -58,7 +58,6 @@ function playRoundUI(event) {
 
         if (roundResult !== "draw") {
             gameOver = updateGameResult(roundResult, userScoreElement, computerScoreElement);
-            console.log(gameOver);
 
             if (gameOver.isGameOver === true) {
                 printGameOver(gameOver.gameWinner);
