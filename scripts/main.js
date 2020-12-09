@@ -118,24 +118,24 @@ function playRoundUI(event) {
         let computerScore = parseInt(computerScoreElement.textContent);
         let gameOver;
 
-        if (userScore < 5 && computerScore < 5) {
+        if (userScore === 5 || computerScore === 5) {
+            restart();
+        }
 
-            let userPlay = event.target.value;
-            let computerPlay = getComputerPlay();
+        let userPlay = event.target.value;
+        let computerPlay = getComputerPlay();
 
-            roundResult = playRound(userPlay, computerPlay);
+        roundResult = playRound(userPlay, computerPlay);
 
-            printRoundResult(roundResult, userPlay, computerPlay);
+        printRoundResult(roundResult, userPlay, computerPlay);
 
-            if (roundResult !== "draw") {
-                gameOver = updateGameResult(roundResult, userScoreElement, computerScoreElement);
-                console.log(gameOver);
+        if (roundResult !== "draw") {
+            gameOver = updateGameResult(roundResult, userScoreElement, computerScoreElement);
+            console.log(gameOver);
 
-                if (gameOver.isGameOver === true) {
-                    printGameOver(gameOver.gameWinner);
-                }
+            if (gameOver.isGameOver === true) {
+                printGameOver(gameOver.gameWinner);
             }
-
         }
     }
 }
@@ -181,6 +181,23 @@ function printGameOver(gameWinner) {
     else {
         gameOverElement.textContent = "Bad luck! The Computer Won!";
     }
+}
+
+function restart() {
+    let userScoreElement = document.querySelector("#user-score");
+    userScoreElement.textContent = "0";
+
+    let computerScoreElement = document.querySelector("#computer-score");
+    computerScoreElement.textContent = "0";
+
+    let gameOverElement = document.querySelector("#game-over");
+    gameOverElement.textContent = "";
+
+    let roundWinnerBoard = document.querySelector("#round-winner");
+    roundWinnerBoard.textContent = "";
+
+    let roundDescription = document.querySelector("#round-description");
+    roundDescription.textContent = "";
 }
 
 const capitalize = (s) => {
