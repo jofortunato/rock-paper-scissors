@@ -9,14 +9,13 @@ This part of the [The Odin Project](https://www.theodinproject.com/) foundations
 ## How to Play
 
 1. Go to [Rock, Paper, Scissors Game](https://jofortunato.github.io/rock-paper-scissors/);
-2. In your browser, open the console (for Google Chrome hit Ctrl+Shift+J);
-3. Type: game();
-4. Follow the instuctions presented in the browser and Play!
+2. Just click on the desired play;
+3. Follow the instuctions presented in the browser and Play!
 
 ## Development
 
 - [x] Console based rock, paper, scissor game. Use a prompt to get the player play;
-- [ ] Create a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
+- [x] Create a simple UI so that the player can play the game by clicking on buttons rather than typing their answer in a prompt.
 
 ## Bugs, Advices and Lessons Learned
 
