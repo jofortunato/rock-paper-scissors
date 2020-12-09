@@ -76,6 +76,10 @@ h3,
   font-size: 48px;
 }
 
+.user-option:hover {
+  transform: scale(1.1);
+}
+
 #computer-options {
   display: block;
   margin-left: auto;
