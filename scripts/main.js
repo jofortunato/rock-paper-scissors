@@ -11,6 +11,29 @@ function getComputerPlay() {
     return possibleOutcomes[playResult]
 }
 
+function playRound(userPlay, computerPlay) {
+    // Given a user play and a computer play of rock, paper, scissors round.
+    // Rock beats scissors.
+    // Paper beats rock.
+    // Scissors beats paper.
+    
+    if (userPlay === computerPlay) {
+        return "draw"
+    }
+    else if ((userPlay === "rock") && (computerPlay === "scissors")) {
+        return "user"
+    }
+    else if ((userPlay === "paper") && (computerPlay === "rock")) {
+        return "user"
+    }
+    else if ((userPlay === "scissors") && (computerPlay === "paper")) {
+        return "user"
+    }
+    else {
+        return "computer"
+    }
+}
+
 function playRoundUI(event) {
 
     if (event.target && event.target.matches(".play-option")) {
